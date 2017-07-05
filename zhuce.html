@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/zhuce1.css" /> 
+	</head>
+	
+	
+	<body>
+		<div id="head">
+			<div class="wrap clear">
+			<div class="left">
+				<a href="#">
+					<img src="img/logo-nuomi.png">
+				
+					<i>注册百度账号</i>
+				</a>
+			</div>
+			<div class="right">
+				
+				<span>我已注册，现在就</span>
+				<a href="#">登录</a>
+				
+			</div>
+			
+			</div>
+		</div>
+		<div id="nav">
+			<div class="wrap">
+			<h2></h2>
+			</div>
+		</div>
+		<div id="main">
+			<div class="wrap clear">
+				<div class="left1">
+					<form action="qingqiu.php" method="post">
+						<p><b>用户名</b><input id="userName" name="userName" type="text" placeholder="请设置用户名"><span id="sPan1" style="color:red"></span></p>
+						<p><b>密码</b><input id="userPass" name="userPass" type="password" placeholder="请输入密码"></p>
+						<p><b>确认密码</b><input id="queren" type="password" placeholder="请再次输入密码"><span id="passMsg" style="color:red"></p>
+						<p><b>手机号码</b><input id="mobilePhone" type="text" placeholder="请输入手机号码"><span id="mobilePhone1" style="color:red"></span></p>
+						<p><b>email</b><input id="userEmail" type="text" placeholder="请输入email号码"><span id="emailMsg" style="color:red"></span></p>
+						
+						<p class="t2"><input class="danxuan" type="checkbox" checked="checked"/>阅读并同意
+						<a href="#">《百度用户协议》</a>
+						</p>
+						
+						<input class="zhuce" type="submit" value="立即注册"/>
+					</form>
+					
+				</div>
+				<div class="right1">
+					<h3><img src="">手机快速注册</h3>
+					<div class="p">
+						<p>请使用中国大陆手机号，编辑短信：</p>
+						<p class="pt">6-14位字符（支持数字/字母/符号）</p>
+						<p>作为登录密码，发送至:</p>
+						<p class="pt1">1069 0691 036590</p>
+						<p>即可注册成功，手机号即为登录帐号。</p>
+					</div>
+					
+					
+				</div>
+				
+				
+			</div>
+		</div>
+		<div id="footer">
+			<div class="foot">
+				
+				2017&nbsp&copy;Baidu
+			</div>
+			
+			
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/tools1.js" ></script>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+<script>
+	$(function(){
+	
+	$("#userName").blur(function(){
+		$.get("chazhao.php",{userName:$("#userName").val()},function(data){
+			if(data=="1"){
+				$("#sPan1").html("此用户名可以使用,赶快注册");
+				
+			}else{
+			$("#sPan1").html("此用户名已注册，请重新输入");	
+			}
+		});		
+	});
+	
+});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	window.onload = function(){
+	
+		
+		
+		
+		$w("userEmail").onblur = function(){
+			//邮箱： ****@***.com；开始是数字字母下划线@开始是数字字母下划线.com或者net或者cn
+			var reg = /^\w+@\w+\.(com|net|cn|com\.cn)$/;
+			var str= $w("userEmail").value;			
+			if(reg.test(str)){
+				$w("emailMsg").innerHTML= "√";
+			}else{
+				$w("emailMsg").innerHTML= "请输入正确的邮箱号码";
+			}
+		}
+		
+		
+		$w("mobilePhone").onblur = function(){
+			//手机号码：11位，  1开头（后者13|18|17），其余全是数字
+			//var reg = /^1[0-9]{10}$/;
+			var reg = /^1[35784][0-9]{9}$/;
+			var str= $w("mobilePhone").value;			
+			if(reg.test(str)){
+				$w("mobilePhone1").innerHTML= "√";
+			}else{
+				$w("mobilePhone1").innerHTML="请输入正确的手机号码";
+			}
+		}
+	//两次密码校验密码	
+		var queren = $w("queren");
+			queren.onblur = function(){
+			    var mm1 = $w("userPass").value;	
+				var mm2 = $w("queren").value;
+					if(mm1!== mm2){
+			            $w("passMsg").innerHTML = "请重新输入密码！"
+							
+						}else{
+						$w("passMsg").innerHTML ="";
+						}
+				    
+		  }
+		
+		
+	}
+	
+	
+	
+</script>

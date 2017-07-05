@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/denglu1.css" /> 
+	</head>
+	<body>
+		<div id="head">
+			<div class="wrap clear">
+			<div class="left">
+				<a href="#">
+					<img src="img/logo-nuomi.png">
+				
+					<i>登录</i>
+				</a>
+			</div>
+			<div class="right">
+				
+				<span>还没有百度糯米账号</span>
+				<a href="#">注册</a>
+				
+			</div>
+			
+			</div>
+		</div>
+		<div id="main">
+			<div class="wrap clear">
+				<div class="left">
+					<img src="img/denglu1.png">
+				</div>
+				
+				<div class="right">
+					<h3>登录百度糯米</h3>
+					<span><a href="#">短信快捷登录</a></span>
+					<p><input id="userName" name="userName" type="text" placeholder="手机/邮箱/用户名"></p>
+					<p><input id="userPass" name="userPass" type="password" placeholder="密码"></p>
+					<p><input class="t1" type="checkbox" checked="checked">
+					下次自动登录
+					<i><a href="#">登录遇到问题</a></i>
+					</p>
+					<input class="t2" id="btn" type="submit" value="登录">
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		<div id="footer">
+			<div class="foot">
+				<a href="#">关于百度糯米</a>
+				<a href="#">常见问题</a>
+				<a href="#">违规投诉&廉政举报</a>
+				<a href="#">开放平台</a>
+				<a href="#">用户协议</a>
+				<span> 客服电话：4006-888-887（每天9:00 - 22:00）</span>
+				
+			</div>
+			<div class="foot1">
+				<span>&copy;</span>
+				2015 nuomi.com
+				<a href="#">京ICP证030173号</a>
+				京公网安备11010802014106号
+			</div>
+			
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript" src="js/cookieTools.js" ></script>
+<script>
+	$(function(){
+	//alert(document.cookie)
+	$("#btn").click(function(){
+		$.post("login.php",{user:$("#userName").val(),userPass:$("#userPass").val()},function(data){
+			if(data=="true"){
+				//登录成功
+				alert("登录成功");
+				//存cookie
+				saveCookie("userName",$("#userName").val(),7)
+				//跳到主页
+			 	location.href="index.html";
+			}else{
+				//登录失败
+				alert("亲，登录失败，用户名或者密码错了");
+			}
+		});		
+	});
+	
+});
+	
+	
+	
+	
+</script>
