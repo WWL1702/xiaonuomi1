@@ -601,10 +601,8 @@
 			
 			for(var i=0;i<obj.length;i++){
 				
-				/*$(".ul").append("<li><a href='#'><img src='"+obj[i].doodsImg+"'</a><p>"+obj[i].goodsName+"</p><span>"+obj[i].goodsDesc+"</span><i>立减13元</i><em>"+obj[i].goodsPrice+"</em><span class='t5'>4.4分</span><span class='t6'>已售4285</span><div class='ding'></div></li>")
-				*/
-				$(".ul").append('<li>'
-								+'<a href="#">'
+						$(".ul").append('<li>'
+								+'<a id="shopping" href="xiangqing.html" bian='+obj[i].goodsId+'>'
 									+'<img src="'+obj[i].goodsImg+'">'
 								+'</a>'
 								+'<p>'+obj[i].goodsName+'</p>'
@@ -619,7 +617,17 @@
 	                           +'</li>');
 				
 			}
+			
 				
+			  
+	 		$("li").on("click","a",function(){
+	 			
+	 			saveCookie("goodsId",$(this).attr("bian"),1)
+	 			
+	 			
+	 		})
+	
+       
 		})
 			
 	})

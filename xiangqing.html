@@ -254,13 +254,16 @@
 					<span>御蝶坊团购</span>
 					
 				</div>
-				<h2>御蝶坊</h2>
-				<span>仅售128元，价值190元2磅无限魅力蛋糕1份！配送自提均可，需预约！</span>
+				<h2 id="mingcheng">御蝶坊</h2>
+				<span id="miaoshu">仅售128元，价值190元2磅无限魅力蛋糕1份！配送自提均可，需预约！</span>
 				<div class="center clear" >
 					<div class="left1">
-						<img src="img/8c1001e93901213f85534dba5ee736d12f2e9577.jpg">
+						<div class="ww" id="boxSmall01" style="width:470px;height:285px;position:relative;">
+							
+						</div>
+						
 						<div class="xiaotu">
-							<img src="img/8c1001e93901213f85534dba5ee736d12f2e9577.jpg">
+							<!--<img id="imgss" src="img/8c1001e93901213f85534dba5ee736d12f2e9577.jpg">-->
 						</div>
 						
 						<a href="#">收藏</a>
@@ -268,10 +271,12 @@
 					<div class="right1">
 						<div class="right1-L clear">
 							<div class="L">
-								<p><s>￥</s>115</p>
+								<s>￥</s><em id="jiage">115</em>
+								<div class="L1">
 								<i>立减13元</i>
 								<i>领劵5元</i>
 								<i>最高返劵五元</i>
+								</div>
 							</div>
 							<div class="R" class="clear">
 								<div class="R1">
@@ -295,9 +300,9 @@
 						<div class="shuliang">
 							<span>数&nbsp;量</span>
 							<div class="anniu">
-								<button class="anniu1">-</button>
-								<input type="text" value="1">
-								<button class="anniu1">+</button>
+								<button id="sub" class="anniu1">-</button>
+								<input id="text1" type="text" value="1">
+								<button id="add" class="anniu1">+</button>
 								
 							</div>
 						</div>
@@ -439,34 +444,86 @@
 	</body>
 </html>
 <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
-<script>
+<script type="text/javascript" src="js/cookieTools.js" ></script>
+<script type="text/javascript" src="js/fangdajing.js" ></script>
+<script type="text/javascript">
 	$(function(){
+	new ShowGoods({
+		boxId:"boxSmall01",
+		boxWidth:470,
+		boxHeight:285,
+		times:2,
+		imgArr:["img/08f790529822720e8bac78de72cb0a46f21fabb0.jpg","img/2.jpg","img/3.jpg"],
+		imgWidth:470,
+		imgHeight:285,
+		zoomColor:'yellow',
+		zoomWidth:150,
+		zoomHeight:150,
+		listWidth:100,
+		listHeight:100,
+		listBorderColor:'#AAA',
+		listBorderHeighColor:'red',
+		listSpace:5,
+		listNum:4,
+		btnWidth:30,
+		btnColor:'black',
+		btnFontSize:45,
+		btnFontColor:'white',
+		btnFontHeighColor:'red' 
+	})
+})	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	$(function(){
+		$("#footer").load("footer.html");
+		     //console.log(document.cookie)
+				$.get("getGoodsInfo.php",{goodsId:getCookie("goodsId")},function(data){
+				   var obj=eval('('+data+')')
+				$("#goodsId").html(obj.goodsId);
+				$("#jiage").html(obj.goodsPrice);
+				$("#miaoshu").html(obj.goodsDesc);
+				$("#imgs").attr("src",obj.goodsImg);
+				$("#imgss").attr("src",obj.goodsImg);
+				$("#mingcheng").html(obj.goodsName);
 		
-		
-		$("#footer").load("footer.html")
 		
 		
 	})
 	
-	/*$(function(){
-		$(".nav-left").css("display","none")
-		$(".te").hover(function(){
+	});
+	$(function(){
+		
+		var Str=$("#text1");
+		
+		$("#add").click(function(){
 			
-			$(".nav-left").css("display","block")
-			},
-		function(){
+			if(parseInt(Str.val())!=10){
+				
+				Str.val(parseInt(Str.val())+1);
+			}
 			
-			$(".nav-left").css("display","none")
+		})
+		$("#sub").click(function(){
+			
+			if(parseInt(Str.val())!=1){
+				
+				Str.val(parseInt(Str.val())-1);
+			}
+			
 		})
 		
-
 		
-		
-		
-		
-		
-	})*/
-	
-	
-	
+	})
 </script>
+	
+
