@@ -259,11 +259,11 @@
 				<div class="center clear" >
 					<div class="left1">
 						<div class="ww" id="boxSmall01" style="width:470px;height:285px;position:relative;">
-							
+							<img id="imgs" src="">
 						</div>
-						
+						<!--<img id="imgs" src="">-->
 						<div class="xiaotu">
-							<!--<img id="imgss" src="img/8c1001e93901213f85534dba5ee736d12f2e9577.jpg">-->
+							<img id="imgss" src="img/8c1001e93901213f85534dba5ee736d12f2e9577.jpg">
 						</div>
 						
 						<a href="#">收藏</a>
@@ -308,7 +308,7 @@
 						</div>
 						<div class="qianggou">
 							
-							<a href="#">立即抢购</a>
+							<a href="gouwuche.html">立即抢购</a>
 						</div>
 					</div>
 						
@@ -445,20 +445,20 @@
 </html>
 <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
 <script type="text/javascript" src="js/cookieTools.js" ></script>
-<script type="text/javascript" src="js/fangdajing.js" ></script>
+<script type="text/javascript" src="js/mirror.js" ></script>
 <script type="text/javascript">
-	$(function(){
+	/*$(function(){
 	new ShowGoods({
 		boxId:"boxSmall01",
 		boxWidth:470,
 		boxHeight:285,
 		times:2,
-		imgArr:["img/08f790529822720e8bac78de72cb0a46f21fabb0.jpg","img/2.jpg","img/3.jpg"],
+		imgArr:["img/08f790529822720e8bac78de72cb0a46f21fabb0.jpg","img/5bafa40f4bfbfbedb1aecc7172f0f736aec31fcc.jpg","img/3.jpg"],
 		imgWidth:470,
 		imgHeight:285,
 		zoomColor:'yellow',
-		zoomWidth:150,
-		zoomHeight:150,
+		zoomWidth:100,
+		zoomHeight:100,
 		listWidth:100,
 		listHeight:100,
 		listBorderColor:'#AAA',
@@ -471,16 +471,7 @@
 		btnFontColor:'white',
 		btnFontHeighColor:'red' 
 	})
-})	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+})*/
 	
 	
 	
@@ -495,12 +486,47 @@
 				$("#imgs").attr("src",obj.goodsImg);
 				$("#imgss").attr("src",obj.goodsImg);
 				$("#mingcheng").html(obj.goodsName);
-		
+				
 		
 		
 	})
+				$(".qianggou").click(function(){
+	    	var str = getCookie("userName");
+	    	var obj=getCookie("goodsId")
+	    	alert(getCookie("userName"))
+	    	console.log($("#text1").val());
+	    	$.get("addShoppingCart.php",{"vipName":str,"goodsId":obj,"goodsCount":$("#text1").val()},function(data){
+	    		if(data=="1"){
+	    			alert("添加成功")
+	    		}else{
+	    			alert("加入失败")
+	    			return false;
+	    		}
+	    		
+	    		
+	    	});
+    	});
 	
 	});
+	window.onload = function(){
+
+	new Mirror({
+		smallBoxId: "boxSmall01",                      
+		smallImgId: "imgs",                      
+		imgPath: "obj.goodsImg",                  
+		
+		baseLeft: 0,    //图片容器初始的left                    
+		baseTop: 0,     //图片容器初始的top                    
+		baseWidth: 128,    //图片容器的width                
+		baseHeight: 201.6,  //图片容器的height                    
+		mirrorWidth: 50,                     
+		mirrorHeight: 50,                    
+		multiple: 5,
+		position:"上"
+	});
+	
+	}
+	
 	$(function(){
 		
 		var Str=$("#text1");
