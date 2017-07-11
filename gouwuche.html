@@ -155,7 +155,7 @@
 			
 			for(var i=0;i<Str.length;i++){
 			
-				num=parseInt(Str[i].goodsPrice)*parseInt(Str[i].goodsCount);
+			num=parseInt(Str[i].goodsPrice)*parseInt(Str[i].goodsCount);
 			$("#tab").append(
 						/*'<tbody ord="'+Str[i].goodsId+'">'*/
 						/*+'<tr>'
@@ -187,9 +187,9 @@
 						+'<td class="font14">'+Str[i].goodsPrice+'</td>'
 						+'<td class="shuliang">'
 						+'<div class="jiajian">'
-						+'<button id="sub">-</button>'
-						+'<input id="shu" class="shu1" type="text" value="'+Str[i].goodsCount+'">'
-						+'<button id="add">+</button>'
+						+'<button class="sub">-</button>'
+						+'<input class="shu" type="text" value="'+Str[i].goodsCount+'"/>'
+						+'<button class="add">+</button>'
 									
 									
 						+'</div>'
@@ -198,7 +198,7 @@
 						+'<td class="price">￥'
 						+'<span class="priceji">'+num+'</span></td>'
 						+'<td class="shanchu">'
-						+'<input id="shanchu" style="width:50px;height:20px;" type="button" value="删除">'
+						+'<input class="shanchu" style="width:50px;height:20px;" type="button" value="删除">'
 						+'</tr>'
 						
 						
@@ -210,7 +210,7 @@
 			
 			vel+=parseInt(Str[i].goodsCount)
 			}
-			shu();
+			
 			
 			$("#zongjia1").html(zong);
 			
@@ -221,15 +221,16 @@
 		});
 		
 		function suan(){
-		$("#sub").on("click",function(){
+		$(".jiajian").on("click",".sub",function(){
+			//alert($(this).index());
 			var num1=parseInt($(this).next().val())-1;
-			//var that=this;
+			var that=this;
 			if(num1>0){
 				var goodsid=$(this).parents("tr").attr("ord");
 				$.get("updateGoodsCount.php",{vipName:getCookie("userName"),goodsId:goodsid,goodsCount:num1},function(data){
 					if(data=="1"){
-						$(this).next().val(num1);
-						zeng();
+						$(that).next().val(num1);
+						zeng()
 					}else{
 						
 						alert("加入失败");
@@ -240,17 +241,17 @@
 			}	
 		})
 		
-		$("#add").on("click",function(){
-			var num1=parseInt($(this).siblings(".shu1").val())+1;
-			 //var that=this;
+	$(".jiajian").on("click",".add",function(){
+			var num1=parseInt($(this).siblings(".shu").val())+1;
+			 var that=this;
 			if(num1<=10){
 				var goodsid=$(this).parents("tr").attr("ord");
 				$.get("updateGoodsCount.php",{vipName:getCookie("userName"),goodsId:goodsid,goodsCount:num1},function(data){
 					if(data=="1"){
-						$(this).siblings(".shu1").val(num1);
-						zeng();
+						//console.log($(that).siblings(".shu").length)
+						$(that).siblings(".shu").val(num1);
+						zeng()
 					}else{
-						
 						alert("加入失败");
 					}
 					
@@ -263,12 +264,12 @@
 		var shuliangResult=0;
 		var zongPrice=0;
 		for(var i=0;i<$(".font14").length;i++){
-			shuliangResult+=parseInt($(".shu1")[i].value);
-			var num1=parseInt($(".font14")[i].innerHTML)*parseInt($(".shu1")[i].value);
+			shuliangResult+=parseInt($(".shu")[i].value);
+			var num1=parseInt($(".font14")[i].innerHTML)*parseInt($(".shu")[i].value);
 			$(".priceji")[i].innerHTML=num1;
 			zongPrice+=num1;
 		}
-		$(".shu1").html(shuliangResult);
+		$(".shu").html(shuliangResult);
 		$("#zongjia1").html("￥"+zongPrice);
 		
 		
@@ -278,7 +279,7 @@
 	//
 	 function remove(){
 		
-		$("#shanchu").click(function(){
+		$(".shanchu").click(function(){
 			var that= this;
 			var   goodsid= $(this).parents("tr").attr("ord");
 			$.get("deleteGoods.php",{vipName:getCookie("userName"),goodsId:goodsid},function(data){
@@ -294,25 +295,27 @@
 			return false
 		})
 	}
-	
-	function shu(){
-	var Str=$("#shu");
-		
-		$("#add").click(function(){
-			
-			if(parseInt(Str.val())!=10){
-				
-				Str.val(parseInt(Str.val())+1);
-			}
-			
-		})
-		$("#sub").click(function(){
-			
-			if(parseInt(Str.val())!=1){
-				
-				Str.val(parseInt(Str.val())-1);
-			}
-			
-		})
-	}
+	$(".queren").click(function(){
+		alert("去结算");
+	})
+//	function shu(){
+//	var Str=$(".shu");
+//		
+//		$(".add").click(function(){
+//			
+//			if(parseInt(Str.val())!=10){
+//				
+//				Str.val(parseInt(Str.val())+1);
+//			}
+//			
+//		})
+//		$(".sub").click(function(){
+//			
+//			if(parseInt(Str.val())!=1){
+//				
+//				Str.val(parseInt(Str.val())-1);
+//			}
+//			
+//		})
+//	}
 </script>

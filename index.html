@@ -132,7 +132,7 @@
 				<li><a href="#">电影</a></li>
 				<li><a href="#">酒店</a></li>
 				<li><a href="#">电影</a></li>
-				<li><a href="#">今日新单</a></li>
+				<li><a href="zhuanti.html">今日新单</a></li>
 				<li class="t1"><a href="#">结婚</a></li>
 			
 			</ul>
@@ -1347,6 +1347,38 @@
 				</div>
 			</div>
 		</div>
+		
+		<!--cebianlan-->
+		<div id="ycnav">
+			<div class="cw clear">
+				<div class="logo2">
+					<a href="#"><img src="img/logo_e53daea.png"></a>
+				</div>
+				<div class="s">
+					<input type="text" value="搜素商家和地点">
+					<a href="#"><img src="img/xiaofangdajing.jpg"></a>
+					
+				</div>
+				
+			</div>
+			
+			
+		</div>
+		<div id="louceng">
+			<div class="wrap2">
+			<ul>
+				<li class="n1"><a href="#"><img src="img/m1.jpg"</a></li>
+				<li><a href="#"><img src="img/m2.jpg"</a></li>
+				<li><a href="#"><img src="img/m3.jpg"</a></li>
+				<li><a href="#"><img src="img/m4.jpg"</a></li>
+				<li><a href="#"><img src="img/m5.jpg"</a></li>
+				
+				
+				
+			</ul>
+			
+			</div>
+		</div>
 	</body>
 </html>
 <script src="js/jquery-1.8.3.min.js"></script>
@@ -1354,6 +1386,53 @@
 <script type="text/javascript" src="js/banner1.js"></script>
 <script type="text/javascript" src="js/cookieTools.js" ></script>
 <script>
+	$(function(){
+		
+		//$("#ycnav").height();
+		
+		$(window).scroll(function(){
+			
+			var scroll2=$(document).scrollTop();
+			
+			if (scroll2 > 550){ //如果滚动距离大于550px则xianshi，否则删除隐藏类
+      			$('#ycnav').css("display","block");
+    				} 
+   				 else {
+     				 $('#ycnav').css('display',"none");
+   					 }
+			
+		});
+		$(window).scroll(function(){
+			
+			var scroll3=$(document).scrollTop();
+			
+			if (scroll3 > 1000){ //如果滚动距离大于550px则xianshi，否则删除隐藏类
+      			$('#louceng').css("display","block");
+    				} 
+   				 else {
+     				 $('#louceng').css('display',"none");
+   					 }
+			
+		});
+		
+		
+		$(".n1").on("click",function(){
+			
+ 
+ 			var target_top = $(".n1").offset().top;
+ 				//$("html,body").animate({scrollTop: target_top}, 1000);  //带滑动效果的跳转
+ 				$("html,body").scrollTop(target_top);
+ 
+
+		})
+	})
+	
+	
+	
+	
+	
+	
+	
 	$(function(){
 		
 		$(".a1").mousemove(function(){

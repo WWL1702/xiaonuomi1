@@ -73,9 +73,26 @@ position:absolute;left:0;top:35px;background:#fff;}
 #search .wrap .w2 li p{margin-left:50px;background:#fbfbfb;padding:10px 50px;}
 #search .wrap .w2 li a:hover{color:#3699FF;text-decoration: underline;}
 
+#xuanxiang{margin-top:30px;}
+#xuanxiang h1{text-align: center;color:#3699FF;font-size:30px;margin-bottom: 10px;}
+#xuanxiang .xuanxiang1{margin:0 auto;width:1210px;position:relative;}
+#xuanxiang .xuanxiang1 ul{width:1210px;height:280px;margin-bottom: 15px;}
+#xuanxiang .xuanxiang1 li .biaoti{width:302px;height:50px;text-align: center;font-size:24px;font-weight:500;background:#EFEFEF;line-height:50px;}
+#xuanxiang .xuanxiang1 .te .biaoti{color:#fff;background:#7D83FF;}
+#xuanxiang .xuanxiang1 li .left9 img{width:412px;height:200px;}
+#xuanxiang .xuanxiang1 li .right9 img{width:196px;height:200px;}
+#xuanxiang .xuanxiang1 li .left9{float:left;}
+#xuanxiang .xuanxiang1 li .right9{float:left;}
+#xuanxiang .xuanxiang1 li .right9 dl{float:left;border:1px solid #fff;}
+#xuanxiang .xuanxiang1 li{float:left;}
+#xuanxiang .xuanxiang1 li .box{width:1210px;position:absolute;left:0;}
+
+
+#main{}
 #main .wrap{margin:0 auto;width:1210px;}
 #main .wrap .main5{margin-top:30px;}
-#main .wrap .main5 .main5-1 h4{float:left;font-size:20px;font-weight:700;}
+#main .wrap .main5 .main5-1{}
+#main .wrap .main5 .main5-1 h4{font-size:30px;font-weight:700;text-align: center;color:#3699FF;}
 #main .wrap .main5 .main5-1 span{float:right;}
 
 #main .wrap .main5 .main5-2 ul{width:1210px;display:flex;justify-content:space-between;flex-wrap: wrap;}
