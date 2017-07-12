@@ -259,14 +259,14 @@
 				<div class="center clear" >
 					<div class="left1">
 						<div class="ww" id="boxSmall01" style="width:470px;height:285px;position:relative;">
-							<img id="imgs" src="">
+							<!--<img id="imgs" src="">-->
 						</div>
 						<!--<img id="imgs" src="">-->
-						<div class="xiaotu">
+						<!--<div class="xiaotu">
 							<img id="imgss" src="img/8c1001e93901213f85534dba5ee736d12f2e9577.jpg">
 						</div>
 						
-						<a href="#">收藏</a>
+						<a href="#">收藏</a>-->
 					</div>
 					<div class="right1">
 						<div class="right1-L clear">
@@ -445,49 +445,45 @@
 </html>
 <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
 <script type="text/javascript" src="js/cookieTools.js" ></script>
-<script type="text/javascript" src="js/mirror.js" ></script>
+<script type="text/javascript" src="js/fangdajing.js"></script>
 <script type="text/javascript">
-	/*$(function(){
-	new ShowGoods({
-		boxId:"boxSmall01",
-		boxWidth:470,
-		boxHeight:285,
-		times:2,
-		imgArr:["img/08f790529822720e8bac78de72cb0a46f21fabb0.jpg","img/5bafa40f4bfbfbedb1aecc7172f0f736aec31fcc.jpg","img/3.jpg"],
-		imgWidth:470,
-		imgHeight:285,
-		zoomColor:'yellow',
-		zoomWidth:100,
-		zoomHeight:100,
-		listWidth:100,
-		listHeight:100,
-		listBorderColor:'#AAA',
-		listBorderHeighColor:'red',
-		listSpace:5,
-		listNum:4,
-		btnWidth:30,
-		btnColor:'black',
-		btnFontSize:45,
-		btnFontColor:'white',
-		btnFontHeighColor:'red' 
-	})
-})*/
-	
-	
-	
+	var path=null;
 	$(function(){
 		$("#footer").load("footer.html");
 		     //console.log(document.cookie)
 				$.get("getGoodsInfo.php",{goodsId:getCookie("goodsId")},function(data){
+					
+					
 				   var obj=eval('('+data+')')
+				   
+				   path=obj.goodsImg;
 				$("#goodsId").html(obj.goodsId);
 				$("#jiage").html(obj.goodsPrice);
 				$("#miaoshu").html(obj.goodsDesc);
-				$("#imgs").attr("src",obj.goodsImg);
-				$("#imgss").attr("src",obj.goodsImg);
 				$("#mingcheng").html(obj.goodsName);
-				
-		
+				new ShowGoods({
+					boxId:"boxSmall01",
+					boxWidth:470,
+					boxHeight:285,
+					times:2,
+					imgArr:[obj.goodsImg],
+					imgWidth:470,
+					imgHeight:285,
+					zoomColor:'yellow',
+					zoomWidth:100,
+					zoomHeight:100,
+					listWidth:100,
+					listHeight:100,
+					listBorderColor:'#AAA',
+					listBorderHeighColor:'red',
+					listSpace:5,
+					listNum:4,
+					btnWidth:30,
+					btnColor:'black',
+					btnFontSize:45,
+					btnFontColor:'white',
+					btnFontHeighColor:'red' 
+			})
 		
 	})
 				$(".qianggou").click(function(){
@@ -507,13 +503,10 @@
 	    	});
     	});
 	
-	});
-	window.onload = function(){
-
-	new Mirror({
+	/*new Mirror({
 		smallBoxId: "boxSmall01",                      
 		smallImgId: "imgs",                      
-		imgPath: "obj.goodsImg",                  
+		imgPath:path,                  
 		
 		baseLeft: 0,    //图片容器初始的left                    
 		baseTop: 0,     //图片容器初始的top                    
@@ -523,9 +516,17 @@
 		mirrorHeight: 50,                    
 		multiple: 5,
 		position:"上"
+	});*/
+	
+	
+	
+	
+	
 	});
 	
-	}
+
+	
+	
 	
 	$(function(){
 		

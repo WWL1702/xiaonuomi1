@@ -46,7 +46,7 @@
 						<a href="#">《百度用户协议》</a>
 						</p>
 						
-						<input class="zhuce" type="submit" value="立即注册"/>
+						<input id="tijiao" class="zhuce" type="submit" value="立即注册"/>
 					</form>
 					
 				</div>
@@ -92,9 +92,47 @@
 		});		
 	});
 	
+	$("form").submit(function(){
+		
+		if($("#userName").val()==""){
+			
+			alert("名称不能为空")
+		}else if($("#userPass").val()!=$("#queren").val()){
+			
+			alert("密码不一致，不能提交")
+		}else if($("#mobilePhone").val()==""){
+			alert("手机号码不能为空")
+		}else if($("#userEmail").val()==""){
+			alert("邮箱号码不能为空")
+		}else if($("#userPass").val()==""){
+			alert("密码不能为空")
+			
+		}else{
+			return true;
+		}
+			
+		return false;
+	})
+	
 });
 	
-	
+	/*function tijiao(){
+		document.getElementById("tijiao").addEventListener("onclick",function(){
+			
+			if(document.getElementById("mobilePhone").value==""){
+				
+				alert("手机号码不能为空");
+				return false;
+			}
+			if(document.getElementById("userEmail").value==""){
+				
+				alert("邮箱号码不能为空");
+				return false;
+			}
+			
+		})
+		
+	}*/
 	
 	
 	

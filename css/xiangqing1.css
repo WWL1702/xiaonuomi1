@@ -36,7 +36,7 @@ position:absolute;left:0;top:35px;background:#fff;}
 .nav .wrap li:hover{background:#000000;}
 .nav .wrap .te1 a{padding-right:2px;}
 .nav .wrap .te:hover dl{display:block;}
-.nav .wrap .te dl{display:none;background:#F2F5F5;width:214px;height:52px;border-bottom:1px solid #C0C0C0;border-left:1px solid #C0C0C0 ;border-right:1px solid #C0C0C0 ;}
+.nav .wrap .te dl{display:none;background:#f9f9f9;width:214px;height:52px;border-bottom:1px solid #C0C0C0;border-left:1px solid #C0C0C0 ;border-right:1px solid #C0C0C0 ;}
 .nav .wrap .te dt{float:left;padding-left:10px}
 .nav .wrap .te dt a{padding:0;font-size:18px;font-weight:900;color:#000000;line-height:52px;}
 .nav .wrap .te dd{margin-right:10px;text-align: right;}

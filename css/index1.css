@@ -40,15 +40,16 @@ position:absolute;left:0;top:35px;background:#fff;}
 
 .nav-bottom{overflow: hidden;}
 .nav-bottom .wrap{width:1210px;margin:0 auto;}
+   
 
-
-.nav-bottom .wrap .nav-left dl{background:#F2F5F5;width:214px;height:52px;border-bottom:1px solid #C0C0C0;border-left:1px solid #C0C0C0 ;border-right:1px solid #C0C0C0 ;}
+.nav-bottom .wrap .nav-left .ed{background:#fff;display:none;width:400px;height:420px;border:1px solid #dfdfdf;position: absolute;left:218px;top:1px;z-index:999;}
+.nav-bottom .wrap .nav-left dl{background:#f9f9f9;width:214px;height:52px;border-bottom:1px solid #dfdfdf;border-left:1px solid #dfdfdf ;border-right:1px solid #dfdfdf ;}
 .nav-bottom .wrap .nav-left dt{float:left;padding-left:10px}
 .nav-bottom .wrap .nav-left dt a{font-size:18px;font-weight:900;color:#000000;line-height:52px;}
 .nav-bottom .wrap .nav-left dd{margin-right:10px;text-align: right;}
 .nav-bottom .wrap .nav-left dd a{display:inline-block;font-size:12px;line-height:52px;}
 .nav-bottom .wrap .nav-left{position:relative;}
-.nav-bottom .wrap .nav-left .ed{background:#fff;display:none;width:400px;height:420px;border:1px solid #D3D3D3;position: absolute;left:218px;top:1px;z-index:999;}
+.nav-bottom .wrap .nav-left .ed{background:#fff;display:none;width:400px;height:420px;border:1px solid #dfdfdf;position: absolute;left:218px;top:1px;z-index:999;}
 .nav-bottom .nav-left .ed a{display:inline-block;width:60px;height:30px;font-size:12px;}
 .nav-bottom .nav-left .ed p{height:40px;line-height:40px;margin-left:10px;font-size:18px;color:#B7B7B7;}
 .nav-bottom .nav-left dl:hover .ed{display:block;}
@@ -112,8 +113,8 @@ position:absolute;left:0;top:106px;z-index:999;color:#fff;text-align: center;lin
 #main .main5 .main5-2 li .t5{margin-top:8px;color:#003366;}
 #main .main5 .main5-2 li .t6{margin-left:110px;color:#003366;}
 #main .main5 .main5-bottom{text-align:center;line-height:26px;
-margin-top:15px;height:26px;border:1px solid #B7B7B7;
-background:#B7B7B7;color:#6D6D6D;font-size:12px;margin-bottom:20px;}
+margin-top:15px;height:26px;border:1px solid #f5f5f5;
+background:#f5f5f5;color:#6D6D6D;font-size:12px;margin-bottom:20px;}
 
 #main #box{height:190px;width:610px;}
 #main #box ul{text-align: center;}

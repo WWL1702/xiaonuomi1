@@ -36,19 +36,19 @@ position:absolute;left:0;top:35px;background:#fff;}
 .nav .wrap li:hover{background:#000000;}
 .nav .wrap .te1 a{padding-right:2px;}
 .nav .wrap .te:hover dl{display:block;}
-.nav .wrap .te dl{display:none;background:#F2F5F5;width:214px;height:52px;border-bottom:1px solid #C0C0C0;border-left:1px solid #C0C0C0 ;border-right:1px solid #C0C0C0 ;}
+.nav .wrap .te dl{z-index:9999;display:none;background:#f9f9f9;width:214px;height:52px;border-bottom:1px solid #AAAAAA;border-left:1px solid #AAAAAA ;border-right:1px solid #AAAAAA ;}
 .nav .wrap .te dt{float:left;padding-left:10px}
 .nav .wrap .te dt a{padding:0;font-size:18px;font-weight:900;color:#000000;line-height:52px;}
 .nav .wrap .te dd{margin-right:10px;text-align: right;}
 .nav .wrap .te dd a{padding:0;display:inline-block;font-size:12px;line-height:52px;color:yellow}
 .nav .wrap .te{position:relative;}
-.nav .wrap .te .ed{background:#B7B7B7;display:none;width:400px;height:420px;position: absolute;left:216px;top:43px;z-index:999;}
+.nav .wrap .te .ed{background:#AAAAAA;display:none;width:400px;height:420px;position: absolute;left:216px;top:43px;z-index:999;}
 .nav .te .ed a{display:inline-block;width:60px;height:30px;font-size:12px;}
 .nav .te .ed p{height:40px;line-height:40px;margin-left:10px;font-size:18px;color:#B7B7B7;}
 .nav .te dl:hover .ed{display:block;}
 
 
-.nav .wrap .te .ed1{display:none;background:#B7B7B7;width:400px;height:420px;position: absolute;left:216px;top:43px;z-index:999;}
+.nav .wrap .te .ed1{display:none;background:#AAAAAA;width:400px;height:420px;position: absolute;left:216px;top:43px;z-index:999;}
 .nav .te .ed1 a{display:inline-block;width:60px;height:30px;font-size:12px;}
 .nav .te .ed1 p{height:40px;line-height:40px;margin-left:10px;font-size:18px;color:#B7B7B7;}
 .nav .te dl:hover .ed1{display:block;}
